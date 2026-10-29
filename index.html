@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WeightTrack</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <main class="container">
+        <header>
+            <h1>WeightTrack</h1>
+            <p>Your personal weight progress dashboard</p>
+        </header>
+
+        <section class="card">
+            <h2>Record Your Weight</h2>
+
+            <form id="weight-form">
+                <label for="weight">Weight (lbs)</label>
+                <input
+                    type="number"
+                    id="weight"
+                    min="1"
+                    max="1500"
+                    step="0.1"
+                    placeholder="e.g. 205.4"
+                    required
+                >
+
+                <label for="date">Date</label>
+                <input type="date" id="date" required>
+
+                <button type="submit">Save Weight</button>
+            </form>
+
+            <p id="message" role="status"></p>
+        </section>
+
+        <section class="stats">
+            <div class="card">
+                <h3>Starting Weight</h3>
+                <p id="starting-weight">--</p>
+            </div>
+
+            <div class="card">
+                <h3>Latest Weight</h3>
+                <p id="latest-weight">--</p>
+            </div>
+
+            <div class="card">
+                <h3>Total Change</h3>
+                <p id="weight-change">--</p>
+            </div>
+        </section>
+
+        <section class="card">
+            <h2>Daily Weight Trend</h2>
+            <div class="chart-container">
+                <canvas id="daily-chart"></canvas>
+            </div>
+        </section>
+
+        <section class="card">
+            <h2>Weekly Average Weight</h2>
+            <div class="chart-container">
+                <canvas id="weekly-chart"></canvas>
+            </div>
+        </section>
+
+        <section class="card">
+            <h2>Weight History</h2>
+            <ul id="weight-history"></ul>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
